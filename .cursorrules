@@ -1,0 +1,22 @@
+# Project: Candy-Style Product Catalog
+
+## Design Language
+- **Style:** Cute, Elegant, Modern Minimalist (inspired by candygogofactory.com).
+- **Color Palette:** Primary #f8f9fa (light gray), Accent #ffb6c1 (pastel pink) or #333 (soft black).
+- **Typography:** Sans-serif, clean, readable (e.g., 'Inter' or 'Quicksand').
+- **Images:** Use rounded corners (rounded-lg) and soft shadows (shadow-sm).
+
+## Functional Requirements
+- Focus on "Viewing" experience.
+- Mobile-first responsive grid (1 column on mobile, 3-4 columns on desktop).
+- No complex cart: Replace "Add to Cart" with a "Zalo: 09xx xxx xxx" button.
+- Clean Navigation: Home, Products, Feedback, Contact.
+
+## Tech Stack
+- HTML5, Tailwind CSS (via CDN).
+- JavaScript (Vanilla) to render products from a data file.
+
+## Rule for Content
+- All text must be in Vietnamese.
+- Price format: 100.000đ.
+- Product tags: "Sản phẩm mới", "Hết hàng", "Bán chạy".
