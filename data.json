@@ -4,6 +4,29 @@
     "name": "Gấu bông thêu tên – Pastel Pink",
     "price": "189.000đ",
     "image_url": "https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1558636508-e0da381fea96?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1582735689369-4fe897db71cf?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "colors": [
+      {
+        "id": "pastel-pink",
+        "label": "Hồng pastel",
+        "image_url": "https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "id": "baby-blue",
+        "label": "Xanh baby",
+        "image_url": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "details": [
+      "Giới hạn thêu 10 kí tự.",
+      "SIZE ~30 cm (chuẩn theo phiên bản pastel).",
+      "Sản phẩm đã bao gồm chi phí đóng gói (hộp + thiệp).",
+      "Thời gian hoàn thiện 7–10 ngày làm việc."
+    ],
     "status": "Còn hàng"
   },
   {
@@ -11,6 +34,26 @@
     "name": "Túi canvas mini – Candy Letter",
     "price": "129.000đ",
     "image_url": "https://images.unsplash.com/photo-1520975958228-29a63f6c4c5e?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1520975958228-29a63f6c4c5e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1590874103328-eac38fdfb5c4?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "colors": [
+      { "id": "stripe-gray-beige", "label": "Kẻ xám be" },
+      { "id": "stripe-pink", "label": "Kẻ hồng" },
+      {
+        "id": "stripe-brown",
+        "label": "Kẻ nâu",
+        "image_url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "embroider_hint": "thêu <10 kí tự + 2 icon nhỏ",
+    "details": [
+      "Thêu hoặc in chữ theo mockup của bạn (tối đa 12 ký tự).",
+      "SIZE có thể tùy phiên bản đã chốt trong đơn.",
+      "Bao gồm chi phí gói tinh giản.",
+      "Thời gian hoàn thiện 7–10 ngày làm việc."
+    ],
     "status": "Còn hàng"
   },
   {
@@ -18,6 +61,18 @@
     "name": "Cốp da đựng phụ kiện – Classic Box",
     "price": "259.000đ",
     "image_url": "https://images.unsplash.com/photo-1523293836415-0e22dc3e61b4?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1523293836415-0e22dc3e61b4?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1548036328-c43e5d5c6d7c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "details": [
+      "Khắc tên / slogan ngắn theo thoả thuận.",
+      "Kích thước và màu theo SKU hiện bán.",
+      "Đơn có thể bao gồm chi phí hộp + thiệp (xin xác nhận khi đặt).",
+      "Lead time có thể dài hơn khi hết mác — đã gỡ trong trạng thái hàng."
+    ],
+    "embroider_hint": "thêu <10 kí tự + 2 icon nhỏ",
     "status": "Hết hàng"
   },
   {
@@ -25,6 +80,16 @@
     "name": "Hộp quà nơ lụa – Sweet Ribbon",
     "price": "99.000đ",
     "image_url": "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1549465227-7165c2c4d4c4?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "details": [
+      "Tùy chọn ribbon & tag chữ trong giới hạn shop.",
+      "SET phụ kiện theo hình chụp mẫu.",
+      "Bao gồm chi phí gói và thiệp kèm trong set.",
+      "Thời gian hoàn thiện 7–10 ngày làm việc."
+    ],
     "status": "Còn hàng"
   },
   {
@@ -32,6 +97,16 @@
     "name": "Bó hoa len mini – Handmade Bloom",
     "price": "149.000đ",
     "image_url": "https://images.unsplash.com/photo-1457089328109-e5d9bd499191?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1457089328109-e5d9bd499191?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1518895949257-7621c3cb8af6?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "details": [
+      "Làm theo combo màu bạn chọn trong catalog.",
+      "SIZE bó có thể thay nhẹ không quá 15% nhìn.",
+      "Có tuỳ chọn đóng hộp + thẻ tay.",
+      "Thời gian hoàn thiện 7–10 ngày làm việc."
+    ],
     "status": "Còn hàng"
   },
   {
@@ -39,6 +114,17 @@
     "name": "Set nến thơm & thiệp – Cozy Note",
     "price": "219.000đ",
     "image_url": "https://images.unsplash.com/photo-1601379329544-2d1d1a3cd955?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1601379329544-2d1d1a3cd955?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1602604955604-9599d906a92c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1570824104453-508955ab713e?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "details": [
+      "Ghi chú mùi hương ưu tiên trong khung shop đang có.",
+      "Combo thiệp + phong bì trong set.",
+      "Đóng hộp bảo vệ trong vận chuyển.",
+      "Đang chờ refill — có thể liên hệ trước qua nút Liên hệ."
+    ],
     "status": "Hết hàng"
   }
 ]

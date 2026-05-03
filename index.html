@@ -3,18 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shop Quà Tặng Candy-Style</title>
+    <title>Candygogo Factory</title>
 
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        safelist: ["aspect-square"],
         theme: {
           extend: {
             colors: {
               base: "#f8f9fa",
               accent: "#ffb6c1",
               ink: "#333333",
+              headerTop: "#F9F7F2",
+              headerNav: "#E3D1CF",
+              navMuted: "#5A5A5A",
+              cream: "#F8F3EB",
+              productInk: "#3d3028",
+              shippingBg: "#F9F4EB",
+              policyInk: "#4A3728",
             },
             boxShadow: {
               soft: "0 10px 30px rgba(0,0,0,0.06)",
@@ -28,7 +36,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
@@ -38,100 +46,204 @@
         font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
           Arial, "Apple Color Emoji", "Segoe UI Emoji";
       }
+      .font-logo-script {
+        font-family: "Dancing Script", cursive;
+      }
+      .font-nav {
+        font-family: Poppins, system-ui, sans-serif;
+      }
     </style>
   </head>
   <body class="bg-base text-ink">
     <!-- Header -->
-    <header class="sticky top-0 z-50 border-b border-black/5 bg-base/80 backdrop-blur">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <a href="#home" class="flex items-center gap-2">
-          <span
-            class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-black/5"
-            aria-hidden="true"
-          >
-            <span class="h-2.5 w-2.5 rounded-full bg-accent"></span>
-          </span>
-          <span class="text-base font-semibold tracking-tight">
-            Candy Gift Studio
-          </span>
-        </a>
-
-        <nav class="hidden items-center gap-2 md:flex">
-          <a
-            class="rounded-full px-4 py-2 text-sm font-medium text-ink/80 hover:bg-white hover:text-ink"
-            href="#home"
-            >Trang chủ</a
-          >
-          <a
-            class="rounded-full px-4 py-2 text-sm font-medium text-ink/80 hover:bg-white hover:text-ink"
-            href="#products"
-            >Sản phẩm</a
-          >
-          <a
-            class="rounded-full px-4 py-2 text-sm font-medium text-ink/80 hover:bg-white hover:text-ink"
-            href="#feedback"
-            >Phản hồi</a
-          >
-          <a
-            class="rounded-full px-4 py-2 text-sm font-medium text-ink/80 hover:bg-white hover:text-ink"
-            href="#contact"
-            >Liên hệ</a
-          >
-        </nav>
-
-        <div class="flex items-center gap-2">
-          <button
-            id="btnContactHeader"
-            class="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-ink/90 focus:outline-none focus:ring-2 focus:ring-accent/60"
-            type="button"
-          >
-            Zalo: 09xx xxx xxx
-          </button>
-
-          <button
-            id="btnMenu"
-            class="inline-flex items-center justify-center rounded-full bg-white p-2 shadow-sm ring-1 ring-black/5 hover:bg-white/80 md:hidden"
-            type="button"
-            aria-label="Mở menu"
-            aria-expanded="false"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              class="h-5 w-5"
+    <header class="sticky top-0 z-50 shadow-sm ring-1 ring-black/[0.04]">
+      <!-- Hàng tiện ích: tìm kiếm • logo • giỏ hàng -->
+      <div class="bg-headerTop">
+        <div
+          class="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-3 md:gap-6"
+        >
+          <div class="flex min-w-0 justify-start">
+            <label
+              class="flex max-w-[200px] min-w-0 items-center gap-2 rounded-full border border-black/[0.06] bg-white/90 px-3 py-2 shadow-sm md:max-w-xs md:w-72"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
+              <span class="sr-only">Tìm kiếm</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.8"
+                stroke="currentColor"
+                class="h-4 w-4 shrink-0 text-navMuted/70"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+              <input
+                type="search"
+                name="q"
+                placeholder="Tìm kiếm..."
+                class="min-w-0 flex-1 bg-transparent text-xs text-navMuted placeholder:text-navMuted/55 focus:outline-none md:text-sm"
               />
-            </svg>
-          </button>
+            </label>
+          </div>
+
+          <a
+            href="#home"
+            class="relative inline-block shrink-0 px-2 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-navMuted/30 focus-visible:ring-offset-2 focus-visible:ring-offset-headerTop"
+          >
+            <span
+              class="pointer-events-none absolute -left-1 top-0 text-[11px] text-amber-500/90"
+              aria-hidden="true"
+              >✦</span
+            >
+            <span
+              class="pointer-events-none absolute -right-0.5 top-1 text-[9px] text-amber-500/80"
+              aria-hidden="true"
+              >✧</span
+            >
+            <span
+              class="pointer-events-none absolute -bottom-0.5 left-1/2 -translate-x-1/2 text-[8px] text-amber-500/70"
+              aria-hidden="true"
+              >✦</span
+            >
+            <span
+              class="font-logo-script text-2xl font-bold leading-none text-black md:text-[1.85rem]"
+            >
+              Candygogo
+            </span>
+            <span
+              class="font-nav mt-0.5 block text-center text-[11px] font-medium tracking-wide text-black md:text-xs"
+            >
+              Factory
+            </span>
+          </a>
+
+          <div class="flex items-center justify-end gap-2">
+            <button
+              type="button"
+              class="relative inline-flex rounded-full p-2 text-black transition hover:bg-black/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-navMuted/25"
+              aria-label="Giỏ hàng (0 sản phẩm)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.6"
+                stroke="currentColor"
+                class="h-6 w-6"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                />
+              </svg>
+              <span
+                class="absolute -right-0.5 -top-0.5 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-semibold leading-none text-white"
+              >
+                0
+              </span>
+            </button>
+
+            <button
+              id="btnMenu"
+              class="inline-flex items-center justify-center rounded-full border border-black/[0.08] bg-white p-2 shadow-sm transition hover:bg-white/90 md:hidden"
+              type="button"
+              aria-label="Mở menu"
+              aria-expanded="false"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                class="h-5 w-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
+      <!-- Thanh điều hướng -->
+      <nav
+        aria-label="Điều hướng chính"
+        class="hidden border-t border-black/[0.04] bg-headerNav md:block"
+      >
+        <div
+          class="font-nav mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-3 text-sm font-medium text-navMuted lg:gap-x-12"
+        >
+          <a class="rounded-md px-1 py-0.5 transition hover:text-black/80" href="#home"
+            >Trang chủ</a
+          >
+          <a
+            class="rounded-md px-1 py-0.5 transition hover:text-black/80"
+            href="#products"
+            >Sản phẩm thiết kế</a
+          >
+          <a
+            class="rounded-md px-1 py-0.5 transition hover:text-black/80"
+            href="#contact"
+            >Tra cứu đơn hàng</a
+          >
+          <a
+            class="rounded-md px-1 py-0.5 transition hover:text-black/80"
+            href="#contact"
+            >Tổ chức event</a
+          >
+          <a
+            class="rounded-md px-1 py-0.5 transition hover:text-black/80"
+            href="#feedback"
+            >Feedbacks</a
+          >
+          <a
+            class="rounded-md px-1 py-0.5 transition hover:text-black/80"
+            href="#contact"
+            >Liên hệ</a
+          >
+        </div>
+      </nav>
+
       <!-- Mobile nav -->
-      <div id="mobileNav" class="hidden border-t border-black/5 bg-base">
-        <div class="mx-auto max-w-6xl px-4 py-3">
-          <div class="grid gap-2">
-            <a class="rounded-xl bg-white px-4 py-3 text-sm font-medium" href="#home"
+      <div id="mobileNav" class="hidden border-t border-black/[0.06] bg-headerNav md:hidden">
+        <div class="font-nav mx-auto max-w-6xl px-4 py-3">
+          <div class="grid gap-1 text-sm font-medium text-navMuted">
+            <a class="rounded-lg px-3 py-3 transition hover:bg-white/40 hover:text-black/80" href="#home"
               >Trang chủ</a
             >
             <a
-              class="rounded-xl bg-white px-4 py-3 text-sm font-medium"
+              class="rounded-lg px-3 py-3 transition hover:bg-white/40 hover:text-black/80"
               href="#products"
-              >Sản phẩm</a
+              >Sản phẩm thiết kế</a
             >
             <a
-              class="rounded-xl bg-white px-4 py-3 text-sm font-medium"
+              class="rounded-lg px-3 py-3 transition hover:bg-white/40 hover:text-black/80"
+              href="#contact"
+              >Tra cứu đơn hàng</a
+            >
+            <a
+              class="rounded-lg px-3 py-3 transition hover:bg-white/40 hover:text-black/80"
+              href="#contact"
+              >Tổ chức event</a
+            >
+            <a
+              class="rounded-lg px-3 py-3 transition hover:bg-white/40 hover:text-black/80"
               href="#feedback"
-              >Phản hồi</a
+              >Feedbacks</a
             >
             <a
-              class="rounded-xl bg-white px-4 py-3 text-sm font-medium"
+              class="rounded-lg px-3 py-3 transition hover:bg-white/40 hover:text-black/80"
               href="#contact"
               >Liên hệ</a
             >
@@ -140,8 +252,9 @@
       </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero + danh sách (ẩn khi xem chi tiết sản phẩm) -->
     <main id="home">
+      <div id="mainListing">
       <section class="mx-auto max-w-6xl px-4 pt-10 md:pt-14">
         <div
           class="relative overflow-hidden rounded-3xl bg-white shadow-soft ring-1 ring-black/5"
@@ -250,24 +363,492 @@
       </section>
 
       <!-- Products -->
-      <section id="products" class="mx-auto max-w-6xl px-4 py-12 md:py-16">
-        <div class="flex items-end justify-between gap-4">
-          <div>
-            <h2 class="text-2xl font-bold tracking-tight md:text-3xl">
-              Danh sách sản phẩm
-            </h2>
-            <p class="mt-2 text-sm text-ink/70">
-              Nhấn “Liên hệ” để đặt nhanh qua Zalo.
-            </p>
-          </div>
-          <span
-            class="hidden rounded-full bg-white px-4 py-2 text-xs font-semibold text-ink/70 ring-1 ring-black/5 md:inline-flex"
-            >Candy-style • Minimal • Xinh xắn</span
+      <section id="products" class="bg-cream scroll-mt-28">
+        <div
+          class="font-nav mx-auto max-w-6xl px-4 py-14 text-center md:px-6 md:py-16 lg:py-20"
+        >
+          <p class="text-sm font-medium text-productInk md:text-[15px]">
+            Thêu theo yêu cầu
+          </p>
+          <h2
+            class="font-logo-script mt-2 text-3xl font-bold leading-tight text-productInk md:mt-3 md:text-4xl lg:text-[2.75rem]"
           >
-        </div>
+            Tất cả sản phẩm
+          </h2>
 
-        <div id="productGrid" class="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <!-- JS sẽ tự đổ sản phẩm vào đây -->
+          <div
+            id="productGrid"
+            class="mt-10 grid grid-cols-2 gap-6 md:mt-14 md:grid-cols-4 md:gap-8 lg:gap-10"
+          >
+            <!-- JS sẽ tự đổ sản phẩm vào đây -->
+          </div>
+        </div>
+      </section>
+      </div>
+
+      <!-- Chi tiết sản phẩm (mở khi bấm vào thẻ sản phẩm) -->
+      <section
+        id="productDetail"
+        class="font-nav hidden scroll-mt-28 bg-headerTop outline-none"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <div class="mx-auto max-w-6xl px-4 py-8 md:px-6 md:py-12 lg:py-14">
+          <button
+            id="btnCloseProductDetail"
+            type="button"
+            class="inline-flex items-center gap-2 text-sm font-medium text-navMuted transition hover:text-productInk focus:outline-none focus-visible:ring-2 focus-visible:ring-headerNav focus-visible:ring-offset-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="h-4 w-4"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+            Quay lại danh sách
+          </button>
+
+          <div class="mt-8 grid gap-10 md:mt-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-16">
+            <div>
+              <div
+                class="overflow-hidden rounded-3xl bg-stone-100/90 shadow-sm ring-1 ring-stone-200/80"
+              >
+                <img
+                  id="productDetailImage"
+                  src=""
+                  alt=""
+                  class="aspect-square w-full object-cover"
+                  width="800"
+                  height="800"
+                />
+              </div>
+              <div
+                id="productDetailDots"
+                class="mt-5 flex flex-wrap items-center justify-center gap-2"
+                aria-label="Ảnh sản phẩm"
+              ></div>
+            </div>
+
+            <div class="text-left">
+              <h1
+                id="productDetailTitle"
+                class="text-xl font-bold leading-snug text-black md:text-2xl"
+              ></h1>
+              <p
+                id="productDetailPrice"
+                class="mt-4 text-sm text-black md:text-[15px]"
+              ></p>
+
+              <button
+                id="btnStartDesign"
+                type="button"
+                class="font-nav mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border border-pink-200/80 bg-[#f5d4dc] px-6 py-3.5 text-sm font-bold tracking-[0.08em] text-black shadow-sm transition hover:bg-[#efbfd0] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 disabled:cursor-not-allowed disabled:opacity-55 sm:w-auto md:py-4 md:pl-8 md:pr-10 md:text-[12px]"
+              >
+                <span class="pointer-events-none text-[1.05rem] leading-none" aria-hidden="true"
+                  >🎀</span
+                >
+                <span id="btnStartDesignLabel">BẮT ĐẦU THIẾT KẾ</span>
+              </button>
+
+              <h2 class="mt-10 text-sm font-semibold uppercase tracking-wide text-productInk md:text-[15px]">
+                Mô tả sản phẩm
+              </h2>
+              <ul
+                id="productDetailBullets"
+                class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-navMuted md:text-[15px]"
+              ></ul>
+
+              <p class="mt-8 md:mt-10">
+                <a
+                  id="productDetailShippingLink"
+                  href="#shipping-services"
+                  class="text-sm text-productInk underline decoration-productInk/40 underline-offset-4 transition hover:decoration-productInk md:text-[15px]"
+                  >Dịch vụ giao hàng & sau bán</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Thiết kế & mua hàng (bước 2 — chọn biến thể) -->
+      <section
+        id="product-design"
+        class="font-nav hidden scroll-mt-28 bg-headerTop outline-none text-black"
+        aria-hidden="true"
+        tabindex="-1"
+        data-product-id=""
+      >
+        <div class="mx-auto max-w-5xl px-4 py-10 md:py-14 lg:py-16">
+          <h1
+            id="designPageTitle"
+            class="text-center text-xl font-bold leading-snug md:text-2xl lg:text-[1.75rem]"
+          ></h1>
+
+          <div class="mt-5 flex justify-center">
+            <span
+              id="designStepBadge"
+              class="inline-flex rounded-full bg-black px-5 py-2 text-[11px] font-semibold tracking-wide text-white md:text-xs"
+              >② Chọn biến thể</span
+            >
+          </div>
+
+          <div
+            class="mt-12 grid gap-12 md:mt-14 md:grid-cols-2 md:items-center md:gap-14 lg:gap-16"
+          >
+            <div
+              class="overflow-hidden rounded-3xl bg-stone-100/90 shadow-sm ring-1 ring-stone-200/80"
+            >
+              <img
+                id="designHeroImage"
+                src=""
+                alt=""
+                class="aspect-[4/3] w-full object-cover md:aspect-square"
+                width="900"
+                height="900"
+              />
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-8 md:items-stretch">
+              <div
+                id="designColorTray"
+                class="hidden w-full rounded-2xl bg-stone-200/45 p-4 ring-1 ring-stone-300/50 md:p-5"
+              >
+                <fieldset class="border-0 p-0 m-0 min-w-0">
+                  <legend class="sr-only">Chọn màu sắc hoặc biến thể</legend>
+                  <div
+                    id="designColorOptions"
+                    class="flex flex-wrap justify-center gap-3 md:justify-start"
+                    role="radiogroup"
+                    aria-label="Màu sắc sản phẩm"
+                  ></div>
+                </fieldset>
+              </div>
+
+              <div
+                class="flex w-full flex-col items-stretch justify-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start"
+              >
+                <button
+                  id="btnDesignBack"
+                  type="button"
+                  class="font-nav inline-flex flex-1 min-w-[140px] items-center justify-center gap-2 rounded-full border border-pink-200/80 bg-[#f5d4dc] px-6 py-3.5 text-xs font-bold tracking-[0.12em] text-black shadow-sm transition hover:bg-[#efbfd0] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 sm:flex-initial sm:min-w-[160px]"
+                >
+                  <span class="text-[1.05rem] leading-none" aria-hidden="true">🎀</span>
+                  QUAY LẠI
+                </button>
+                <button
+                  id="btnDesignNext"
+                  type="button"
+                  class="font-nav inline-flex flex-1 min-w-[140px] items-center justify-center gap-2 rounded-full border border-pink-200/80 bg-[#f5d4dc] px-6 py-3.5 text-xs font-bold tracking-[0.12em] text-black shadow-sm transition hover:bg-[#efbfd0] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 sm:flex-initial sm:min-w-[160px]"
+                >
+                  <span class="text-[1.05rem] leading-none" aria-hidden="true">🎀</span>
+                  TIẾP THEO
+                </button>
+              </div>
+              <p
+                class="max-w-md text-center text-sm leading-relaxed text-[#6d4c41]/95 md:text-left md:text-[15px]"
+              >
+                <span class="font-semibold text-[#6d4c41]">Mẹo:</span>
+                Có thể đổi màu/size ở Bước 2 nếu muốn.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bước 3: thiết kế chữ thêu & màu chỉ -->
+      <section
+        id="product-embroidery-step"
+        class="font-nav hidden scroll-mt-28 bg-headerTop pb-14 text-black outline-none"
+        aria-hidden="true"
+        tabindex="-1"
+        data-product-id=""
+      >
+        <div class="mx-auto max-w-xl px-4 py-10 md:max-w-lg md:py-14">
+          <h1
+            id="embroideryPageTitle"
+            class="text-center text-xl font-bold leading-snug md:text-2xl"
+          ></h1>
+
+          <div class="mt-5 flex justify-center">
+            <span
+              class="inline-flex rounded-full bg-black px-5 py-2 text-[11px] font-semibold tracking-wide text-white md:text-xs"
+              >3 Thiết kế</span
+            >
+          </div>
+
+          <div
+            class="mx-auto mt-10 max-w-md rounded-2xl bg-white p-5 shadow-md ring-1 ring-black/[0.06] md:p-6"
+          >
+            <div
+              id="embroideryStage"
+              class="relative isolate aspect-square overflow-hidden rounded-xl bg-stone-50 ring-1 ring-stone-200/80"
+            >
+              <img
+                id="embroideryPreviewImage"
+                src=""
+                alt=""
+                class="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover"
+                draggable="false"
+                width="640"
+                height="640"
+              />
+              <div
+                id="embroideryOverlay"
+                class="absolute inset-0 z-10 touch-none overflow-hidden"
+                aria-hidden="true"
+              ></div>
+            </div>
+            <p
+              id="embroideryInstructionLine"
+              class="mt-4 text-center text-sm leading-relaxed text-neutral-700 md:text-[15px]"
+            ></p>
+          </div>
+
+          <div class="mx-auto mt-8 max-w-md">
+            <div
+              class="flex items-center gap-2 rounded-xl border-2 border-dashed border-stone-300 bg-white px-3 py-2.5"
+            >
+              <input
+                id="embroideryTextInput"
+                type="text"
+                maxlength="30"
+                placeholder="Nhập nội dung chữ..."
+                class="min-w-0 flex-1 border-0 bg-transparent text-sm text-neutral-900 outline-none placeholder:text-stone-400"
+                autocomplete="off"
+              />
+              <button
+                id="btnEmbroideryClearText"
+                type="button"
+                class="shrink-0 rounded-lg p-2 text-stone-500 transition hover:bg-stone-100 hover:text-stone-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20"
+                aria-label="Xoá nội dung"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-5 w-5"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <button
+                id="btnEmbroideryAddText"
+                type="button"
+                class="rounded-full border border-stone-300 bg-white px-4 py-2 text-xs font-semibold text-neutral-800 shadow-sm transition hover:bg-stone-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20"
+              >
+                Thêm Text
+              </button>
+              <button
+                id="btnEmbroideryAddIcon"
+                type="button"
+                class="rounded-full border border-stone-300 bg-white px-4 py-2 text-xs font-semibold text-neutral-800 shadow-sm transition hover:bg-stone-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20"
+              >
+                Thêm Icon 🐾
+              </button>
+            </div>
+
+            <p
+              id="embroideryTextValidation"
+              class="mt-3 min-h-[1.125rem] text-center text-xs text-red-600"
+              aria-live="polite"
+            ></p>
+
+            <div
+              class="mt-6 flex flex-wrap items-center gap-3 rounded-xl bg-white/70 py-3 ring-1 ring-stone-200/60 px-4"
+            >
+              <label class="flex min-w-0 flex-[1_1_140px] flex-col gap-1">
+                <span class="sr-only">Font</span>
+                <select
+                  id="embroideryFontSelect"
+                  class="rounded-xl border border-pink-200/80 bg-[#fdeef2] px-3 py-2 text-sm font-medium text-neutral-900 outline-none ring-0 focus:border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-200/70"
+                >
+                  <option value="candy">candy</option>
+                  <option value="poppins">Poppins</option>
+                  <option value="script">Dancing Script</option>
+                  <option value="serif">Serif cổ điển</option>
+                </select>
+              </label>
+              <label class="flex w-[84px] flex-col gap-1">
+                <span class="sr-only">Cỡ chữ</span>
+                <input
+                  id="embroideryFontSize"
+                  type="number"
+                  min="10"
+                  max="96"
+                  value="28"
+                  class="rounded-xl border border-stone-300 bg-white px-2 py-2 text-center text-sm font-semibold outline-none focus:ring-2 focus:ring-black/15"
+                />
+              </label>
+            </div>
+          </div>
+
+          <div class="mx-auto mt-10 max-w-md">
+            <p class="text-center text-sm font-medium text-neutral-800 md:text-[15px]">
+              Ấn để chọn màu chỉ thêu ứng dụng cho chữ và icon
+            </p>
+            <p class="mt-1 text-center text-[11px] text-stone-500 md:text-xs">
+              Tap to select embroidery thread colors for text and icons
+            </p>
+            <div
+              id="embroideryThreadGrid"
+              class="mt-4 grid max-h-52 auto-rows-min grid-cols-4 gap-x-3 gap-y-4 overflow-y-auto overscroll-contain pb-2 pl-1 pr-2 pt-2 sm:grid-cols-4 md:grid-cols-4"
+              role="radiogroup"
+              aria-label="Màu chỉ thêu"
+            ></div>
+          </div>
+
+          <div
+            class="mx-auto mt-10 flex max-w-md flex-col gap-4 sm:flex-row sm:flex-wrap sm:justify-center"
+          >
+            <button
+              id="btnEmbroideryBack"
+              type="button"
+              class="font-nav inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-2xl border border-pink-200/90 bg-[#f5d4dc] px-6 py-3.5 text-xs font-bold tracking-[0.12em] text-black shadow-sm transition hover:bg-[#efbfd0] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 sm:flex-initial sm:min-w-[150px]"
+            >
+              <span class="text-[1.05rem] leading-none" aria-hidden="true">🎀</span>
+              QUAY LẠI
+            </button>
+            <button
+              id="btnEmbroideryFinish"
+              type="button"
+              class="font-nav inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-2xl border border-pink-300/80 bg-[#e9b9cc] px-6 py-3.5 text-xs font-bold tracking-[0.1em] text-black shadow-sm transition hover:bg-[#e0a8bf] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 sm:flex-initial sm:min-w-[150px]"
+            >
+              <span class="text-[1.05rem] leading-none" aria-hidden="true">🎀</span>
+              HOÀN TẤT THIẾT KẾ
+            </button>
+          </div>
+          <p
+            class="mx-auto mt-6 max-w-md text-center text-xs leading-relaxed text-neutral-600"
+          >
+            Kéo thả để di chuyển; dùng 2 ngón để phóng to/thu nhỏ.
+          </p>
+        </div>
+      </section>
+
+      <!-- Dịch vụ giao hàng & sau bán -->
+      <section
+        id="shipping-services"
+        class="font-nav hidden scroll-mt-28 bg-shippingBg text-policyInk outline-none"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <div class="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-14 lg:py-20">
+          <button
+            id="btnCloseShipping"
+            type="button"
+            class="inline-flex items-center gap-2 text-sm font-medium text-policyInk/85 transition hover:text-policyInk focus:outline-none focus-visible:ring-2 focus-visible:ring-headerNav focus-visible:ring-offset-2 focus-visible:ring-offset-shippingBg"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="h-4 w-4"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+            Quay lại
+          </button>
+
+          <h1 class="mt-10 text-2xl font-bold leading-snug md:mt-12 md:text-3xl md:leading-tight">
+            Dịch vụ giao hàng &amp; sau bán hàng
+          </h1>
+
+          <div class="mt-10 space-y-10 text-left text-sm leading-relaxed md:mt-12 md:text-[15px] md:leading-[1.7]">
+            <section aria-labelledby="ship-t1">
+              <h2 id="ship-t1" class="text-base font-bold md:text-[17px]">
+                <span class="text-policyInk/90">1.</span> Chuẩn bị hàng
+              </h2>
+              <div class="mt-3 space-y-2 text-policyInk/95">
+                <p>
+                  <span class="font-semibold text-policyInk">Chuẩn bị tiêu chuẩn:</span>
+                  sau khi xác nhận và thanh toán, thời gian chuẩn bị hàng dao động
+                  <strong>7–12 ngày làm việc</strong> tuỳ mẫu và lịch làm của xưởng.
+                </p>
+                <p>
+                  <span class="font-semibold text-policyInk">Chuẩn bị hoả tốc:</span>
+                  trong vòng <strong>24–48 giờ làm việc</strong> khi được shop xác nhận và
+                  có thể có <strong>phụ phí</strong> theo báo giá riêng từng đơn.
+                </p>
+              </div>
+            </section>
+
+            <section aria-labelledby="ship-t2">
+              <h2 id="ship-t2" class="text-base font-bold md:text-[17px]">
+                <span class="text-policyInk/90">2.</span> Sản phẩm lỗi
+              </h2>
+              <div class="mt-3 space-y-3 text-policyInk/95">
+                <p>
+                  <strong>(1)</strong> Nếu phát hiện <strong>lỗi nghiêm trọng</strong> (thiếu
+                  hàng sai mẫu, hư hỏng nặng không do vận chuyển/ người dùng…) vui lòng
+                  liên hệ qua <strong>Zalo</strong> của shop kèm <strong>mã đơn hàng</strong> và
+                  <strong>video mở hộp đầy đủ</strong> trong vòng <strong>7 ngày</strong> kể từ
+                  khi bạn nhận được đơn. Shop xem xét theo chứng cứ và chính sách tại thời
+                  điểm làm việc.
+                </p>
+                <p>
+                  <strong>(2)</strong> Shop khuyến khích bạn quay lại quá trình mở hộp và kiểm
+                  tra để giảm rủi ro tranh cãi không đáng có. Video có hiệu lực hỗ trợ đổi
+                  trả/ xử lý khi được thực hiện trong vòng <strong>2 ngày</strong> sau khi nhận và
+                  thể hiện rõ <strong>mã nhãn vận chuyển</strong>,
+                  <strong>tình trạng bên ngoài bao bì</strong> và
+                  <strong>lỗi sản phẩm</strong>.
+                </p>
+              </div>
+            </section>
+
+            <section aria-labelledby="ship-t3">
+              <h2 id="ship-t3" class="text-base font-bold md:text-[17px]">
+                <span class="text-policyInk/90">3.</span> Thuế phí
+              </h2>
+              <p class="mt-3 text-policyInk/95">
+                Đối với đơn hàng gửi qua kênh <strong>nhanh/quốc tế</strong> (ghi rõ trong
+                quá trình báo giá và vận chuyển), người mua chịu trách nhiệm thanh toán toàn bộ
+                <strong>thuế hải quan, phí và các khoản thu có liên quan</strong> phát sinh tại điểm nhận
+                theo quy định đơn vị vận chuyển và pháp luật địa phương.
+              </p>
+            </section>
+
+            <section aria-labelledby="ship-t4">
+              <h2 id="ship-t4" class="text-base font-bold md:text-[17px]">
+                <span class="text-policyInk/90">4.</span> Tình trạng hết hàng
+              </h2>
+              <p class="mt-3 text-policyInk/95">
+                Đặc thù các sản phẩm thiết kế / may thủ công / phụ kiện khan hiếm
+                có thể khiến một vài SKU <strong>tạm hết hàng</strong> ngoài dự kiến. Khi xảy ra,
+                shop sẽ thông báo kịp thời và đề xuất phương án (đổi mẫu, hoàn tiền theo
+                thoả thuận, giữ chỗ…) phù hợp.
+              </p>
+            </section>
+
+            <section aria-labelledby="ship-t5">
+              <h2 id="ship-t5" class="text-base font-bold md:text-[17px]">
+                <span class="text-policyInk/90">5.</span> Thông báo về vận chuyển
+              </h2>
+              <p class="mt-3 text-policyInk/95">
+                Candygogo lựa chọn <strong>đơn vị và tuyến vận chuyển</strong> phù hợp từng vùng
+                nhằm đảm bảo hàng được gửi đi <strong>nhanh và an toàn</strong> nhất có thể theo
+                điều kiện thực tế (chủ động thông báo khi có thay đổi thời gian giao dự kiến).
+              </p>
+            </section>
+          </div>
         </div>
       </section>
 
@@ -360,6 +941,48 @@
         </div>
       </footer>
     </main>
+
+    <!-- Modal chọn icon thêu (bước thiết kế) -->
+    <div
+      id="embIconModal"
+      class="font-nav fixed inset-0 z-[200] hidden items-center justify-center bg-black/50 p-4"
+      aria-hidden="true"
+      role="presentation"
+    >
+      <div
+        class="relative w-full max-w-lg rounded-2xl bg-white p-5 shadow-2xl ring-1 ring-black/10 md:p-6"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="embIconModalTitle"
+      >
+        <div class="flex items-start justify-between gap-3">
+          <h2 id="embIconModalTitle" class="text-lg font-bold text-neutral-900 md:text-xl">
+            Chọn Icon
+          </h2>
+          <button
+            id="btnEmbIconModalClose"
+            type="button"
+            class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xl font-bold leading-none text-red-500 transition hover:bg-red-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+            aria-label="Đóng"
+          >
+            ×
+          </button>
+        </div>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span
+            class="inline-flex rounded-xl border-2 border-black bg-gradient-to-b from-pink-100 via-pink-50 to-rose-50 px-5 py-2.5 text-sm font-semibold text-neutral-900 shadow-sm"
+          >
+            Hình thêu
+          </span>
+        </div>
+        <div class="mt-5 border-t border-stone-200 pt-5">
+          <div
+            id="embIconModalGrid"
+            class="grid grid-cols-5 gap-2 sm:gap-3"
+          ></div>
+        </div>
+      </div>
+    </div>
 
     <!-- Data + Script -->
     <script src="./script.js"></script>
